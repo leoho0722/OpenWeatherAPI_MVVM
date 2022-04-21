@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="MVVM_Demo" customModuleProvider="target">
+            <connections>
+                <outlet property="cityLabel" destination="sbl-F3-oh6" id="Ieq-RN-Qe7"/>
+                <outlet property="cityPickerView" destination="ILn-BG-gAZ" id="OgV-Ws-ksf"/>
+                <outlet property="cityPickerViewBottomConstraint" destination="MLV-Rf-4Fi" id="nGg-YR-MPW"/>
+                <outlet property="searchButton" destination="1qi-01-Sob" id="MQJ-tZ-d6h"/>
+                <outlet property="showPickerButton" destination="oKL-qy-8Rq" id="0uE-0u-P2R"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILn-BG-gAZ">
+                    <rect key="frame" x="0.0" y="646" width="414" height="216"/>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sbl-F3-oh6">
+                    <rect key="frame" x="5" y="74" width="404" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="IMF-pm-PJm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKL-qy-8Rq">
+                    <rect key="frame" x="20" y="437.5" width="130" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="130" id="ce6-Ms-nHt"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="eye.circle.fill" catalog="system" title="Show Picker" imagePadding="5"/>
+                    <connections>
+                        <action selector="showPickerBtnClicked:" destination="-1" eventType="touchUpInside" id="sa7-vx-Soh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qi-01-Sob">
+                    <rect key="frame" x="264" y="437.5" width="130" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="130" id="QzN-hK-PxK"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="magnifyingglass.circle.fill" catalog="system" title="Search" imagePadding="5"/>
+                    <connections>
+                        <action selector="startSearchBtnClicked:" destination="-1" eventType="touchUpInside" id="Wxa-WV-C9O"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="oKL-qy-8Rq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="6XG-rR-fMq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sbl-F3-oh6" secondAttribute="trailing" constant="5" id="7BK-Do-9M8"/>
+                <constraint firstItem="sbl-F3-oh6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="HdF-DW-0Gp"/>
+                <constraint firstItem="1qi-01-Sob" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="JUI-bG-u42"/>
+                <constraint firstItem="ILn-BG-gAZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Lyo-tW-gSl"/>
+                <constraint firstItem="ILn-BG-gAZ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="MLV-Rf-4Fi"/>
+                <constraint firstItem="sbl-F3-oh6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="NuF-2G-9W7"/>
+                <constraint firstItem="sbl-F3-oh6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="a9D-JI-EaX"/>
+                <constraint firstItem="ILn-BG-gAZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="dc1-gG-s3V"/>
+                <constraint firstItem="ILn-BG-gAZ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="eTh-kP-Vha"/>
+                <constraint firstItem="oKL-qy-8Rq" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="kOw-4x-7J6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1qi-01-Sob" secondAttribute="trailing" constant="20" id="tjV-QV-YE3"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="102"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="eye.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
