@@ -81,6 +81,7 @@
 		D09BA71D2810FF6D007F7661 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D09BA72C28112CED007F7661 /* Alert.swift */,
 				D09BA726281101D8007F7661 /* BaseViewController.swift */,
 				D09BA7202810FFA0007F7661 /* MainViewController.swift */,
 				D09BA7212810FFA0007F7661 /* MainViewController.xib */,
@@ -91,6 +92,7 @@
 		D09BA71E2810FF77007F7661 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D09BA72828110209007F7661 /* WeatherAPIService.swift */,
 				D09BA72A2811095D007F7661 /* MainViewControllerViewModel.swift */,
 			);
 			path = ViewModel;
@@ -100,8 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				D09BA7242810FFE4007F7661 /* WeatherData.swift */,
-				D09BA72828110209007F7661 /* WeatherAPIService.swift */,
-				D09BA72C28112CED007F7661 /* Alert.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

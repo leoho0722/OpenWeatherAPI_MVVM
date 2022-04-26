@@ -27,7 +27,7 @@ class WeatherAPIService: NSObject {
                     print("============== Weather Data ==============")
                     print(weatherData)
                     print("============== Weather Data ==============")
-                    finish(weatherData) // 將查詢結果透過 Closure 回傳到 ViewModel
+                    finish(weatherData) // 將 API Response 的資料結構 (Model) 也就是 WeatherData，透過 Closure 回傳給 ViewModel
                 }
             }.resume()
         } else {

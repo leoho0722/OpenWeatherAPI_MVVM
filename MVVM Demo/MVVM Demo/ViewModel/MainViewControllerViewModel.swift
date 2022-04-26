@@ -30,7 +30,7 @@ class MainViewControllerViewModel {
         }
     }
     
-    // 呼叫 Model 的 WeatherAPIService 來執行 API 查詢
+    // 呼叫 ViewModel 的 WeatherAPIService 來執行 API 查詢
     func fetchWeatherData(city: String) {
         WeatherAPIService.shared.getWeatherData(city: city) { weatherData in
             self.mainViewControllerViewModelDelegate?.didFetchWeatherData(data: weatherData)
