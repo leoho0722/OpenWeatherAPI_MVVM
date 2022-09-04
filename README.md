@@ -11,7 +11,7 @@ App 最低安裝限制：iOS 13.0
 API 來源：OpenWeather
 
 ### Result type Support！
-```swift=
+```swift
 @available(iOS 14.0, *)
 @available(swift 5.0)
 func getWeatherData(city: String, completion: @escaping (Result<WeatherData, WeatherDataFetchError>) -> Void) {
@@ -55,7 +55,7 @@ func getWeatherData(city: String, completion: @escaping (Result<WeatherData, Wea
 ```
 
 ### await/async Support！
-```swift=
+```swift
 @available(iOS 15.0, *)
 @available(swift 5.5)
 func getWeatherData(city: String) async throws -> WeatherData {
