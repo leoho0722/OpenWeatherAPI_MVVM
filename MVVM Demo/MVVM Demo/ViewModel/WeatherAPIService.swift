@@ -59,6 +59,7 @@ class WeatherAPIService: NSObject {
     
     /// 取得天氣資料 with Result type
     @available(iOS 14.0, *)
+    @available(swift 5.0)
     func getWeatherData(city: String, completion: @escaping (Result<WeatherData, WeatherDataFetchError>) -> Void) {
         let address = "https://api.openweathermap.org/data/2.5/weather?"
         let apikey = "62ef5eba4eeb4662491645f8f68cc219"
@@ -100,6 +101,7 @@ class WeatherAPIService: NSObject {
     
     /// 取得天氣資料 async
     @available(iOS 15.0, *)
+    @available(swift 5.5)
     func getWeatherData(city: String) async throws -> WeatherData {
         let address = "https://api.openweathermap.org/data/2.5/weather?"
         let apikey = "62ef5eba4eeb4662491645f8f68cc219"
