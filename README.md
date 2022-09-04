@@ -10,6 +10,16 @@ App 最低安裝限制：iOS 13.0
 
 API 來源：OpenWeather
 
+### WeatherDataFetchError
+```swift
+enum WeatherDataFetchError: Error {
+    case invalidURL
+    case requestFailed
+    case responseFailed
+    case jsonDecodeFailed
+}
+```
+
 ### Result type Support！
 ```swift
 @available(iOS 14.0, *)
