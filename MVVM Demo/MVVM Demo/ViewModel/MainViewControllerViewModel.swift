@@ -32,8 +32,54 @@ class MainViewControllerViewModel {
     
     // 呼叫 ViewModel 的 WeatherAPIService 來執行 API 查詢
     func fetchWeatherData(city: String) {
-        WeatherAPIService.shared.getWeatherData(city: city) { weatherData in
-            self.mainViewControllerViewModelDelegate?.didFetchWeatherData(data: weatherData)
+        if #available(iOS 15.0, *) {
+            Task {
+                do {
+                    let weatherData = try await WeatherAPIService.shared.getWeatherData(city: city)
+                    self.mainViewControllerViewModelDelegate?.didFetchWeatherData(data: weatherData)
+                } catch WeatherAPIService.WeatherDataFetchError.invalidURL {
+                    print("無效的 URL")
+                } catch WeatherAPIService.WeatherDataFetchError.requestFailed {
+                    print("Request Error")
+                } catch WeatherAPIService.WeatherDataFetchError.responseFailed {
+                    print("Response Error")
+                } catch WeatherAPIService.WeatherDataFetchError.jsonDecodeFailed {
+                    print("JSON Decode 失敗")
+                }
+            }
+        } else if #available(iOS 14.0, *) {
+            WeatherAPIService.shared.getWeatherData(city: city) { result in
+                switch result {
+                case .success(let weatherData):
+                    self.mainViewControllerViewModelDelegate?.didFetchWeatherData(data: weatherData)
+                case.failure(let fetchError):
+                    switch fetchError {
+                    case .invalidURL:
+                        print("無效的 URL")
+                    case .requestFailed:
+                        print("Request Error")
+                    case .responseFailed:
+                        print("Response Error")
+                    case .jsonDecodeFailed:
+                        print("JSON Decode 失敗")
+                    }
+                }
+            }
+        } else {
+            WeatherAPIService.shared.getWeatherData(city: city) { weatherData in
+                self.mainViewControllerViewModelDelegate?.didFetchWeatherData(data: weatherData)
+            } failure: { weatherFetchError in
+                switch weatherFetchError {
+                case .invalidURL:
+                    print("無效的 URL")
+                case .requestFailed:
+                    print("Request Error")
+                case .responseFailed:
+                    print("Response Error")
+                case .jsonDecodeFailed:
+                    print("JSON Decode 失敗")
+                }
+            }
         }
     }
     
